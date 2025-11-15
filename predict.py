@@ -6,20 +6,25 @@ with open('dv.bin', 'rb') as f_in:
 with open('model.bin', 'rb') as f_in:
     model = pickle.load(f_in)
 
-best_threshold = 0.09
+BEST_THRESHOLD = 0.09
+MEAN_GLUCOSE = 106.45
 
 def predict_stroke(customer_data):
     """
     Takes a customer dictionary and returns a stroke prediction probability
     and the final decision.
     """
+    data = customer_data.copy()
+    if data['avg_glucose_level'] is None:
+        data['avg_glucose_level'] = MEAN_GLUCOSE
+
     # We use .transform() on a list containing our single customer
-    X = dv.transform([customer_data])
+    X = dv.transform([data])
 
     # Get probability for the "positive" class (class '1')
     y_pred_proba = model.predict_proba(X)[0, 1] 
 
-    decision = (y_pred_proba >= best_threshold)
+    decision = (y_pred_proba >= BEST_THRESHOLD)
 
     return y_pred_proba, decision
 
@@ -55,4 +60,4 @@ if __name__ == "__main__":
     print("--- Prediction Test ---")
     print(f"Customer data: {customer}")
     print(f"Stroke Probability: {probability:.4f}")
-    print(f"Stroke Prediction (at {best_threshold} threshold): {prediction}")
+    print(f"Stroke Prediction (at {BEST_THRESHOLD} threshold): {prediction}")

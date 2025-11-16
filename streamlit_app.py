@@ -5,7 +5,7 @@ from schemas import Gender, EverMarried, WorkType, ResidenceType, SmokingStatus
 
 
 # ---
-API_URL = "https://stroke-predictor-api-530767428784.us-east1.run.app/predict" 
+API_URL = "https://api.stroke-predictor.acel.dev//predict" 
 # -------------------------------------------------
 
 

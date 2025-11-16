@@ -10,6 +10,14 @@ The model is trained, validated, and then served as a REST API using FastAPI and
 
 ---
 
+## 🚀 Live Demo
+
+This project is fully deployed and publicly accessible:
+
+* **Frontend Web App (Streamlit):** **[stroke-risk-predictor-acel.streamlit.app](https://stroke-risk-predictor-acel.streamlit.app/)**
+* **Backend API (Google Cloud Run):** **[api.stroke-predictor.acel.dev](https://api.stroke-predictor.acel.dev/)**
+* **API Docs (Swagger UI):** **[api.stroke-predictor.acel.dev/docs](https://api.stroke-predictor.acel.dev/docs)**
+
 ## 1. Problem Statement
 
 The aim of this project is to build a model that accurately predicts the likelihood of a person having a stroke. It is trained on a public dataset from Kaggle. The goal is to create a tool that an average person could use to get a preliminary risk assessment based on their current health attributes and lifestyle habits.
@@ -95,12 +103,12 @@ You can run this project either locally using `uv` or in a container using `Dock
 
 ## 5. API Usage
 
-The server is now running at `http://127.0.0.1:8000`.
+The API is live at `https://api.stroke-predictor.acel.dev/`.
 
 ### Interactive Docs (Swagger UI)
 
 You can access the interactive Swagger documentation by navigating to:
-**`http://127.0.0.1:8000/docs`**
+**[https://api.stroke-predictor.acel.dev/docs](https://api.stroke-predictor.acel.dev/docs)**
 
 From there, you can see all the valid inputs (including dropdowns for categorical features) and test the API.
 
@@ -110,7 +118,7 @@ Here is an example of how to send a request from your terminal:
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/predict' \
+  '[https://api.stroke-predictor.acel.dev/predict](https://api.stroke-predictor.acel.dev/predict)' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{

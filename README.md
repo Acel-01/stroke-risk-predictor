@@ -103,12 +103,12 @@ You can run this project either locally using `uv` or in a container using `Dock
 
 ## 5. API Usage
 
-The API is live at `https://api.stroke-predictor.acel.dev/`.
+The server is now running at `http://127.0.0.1:8000`.
 
 ### Interactive Docs (Swagger UI)
 
 You can access the interactive Swagger documentation by navigating to:
-**[https://api.stroke-predictor.acel.dev/docs](https://api.stroke-predictor.acel.dev/docs)**
+**`http://127.0.0.1:8000/docs`**
 
 From there, you can see all the valid inputs (including dropdowns for categorical features) and test the API.
 
@@ -118,7 +118,7 @@ Here is an example of how to send a request from your terminal:
 
 ```bash
 curl -X 'POST' \
-  '[https://api.stroke-predictor.acel.dev/predict](https://api.stroke-predictor.acel.dev/predict)' \
+  'http://127.0.0.1:8000/predict' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
